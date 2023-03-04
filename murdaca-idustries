@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <!-- normalize.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+<style>
+  .bg-image-parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-image-parallax {
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+  }
+
+  .btn-hover {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    /* ... altre proprietà */
+    border-radius: 50px;
+    padding: 18px 32px;
+    font-size: 1.25rem;
+  }
+
+  .btn-hover::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background-color: #0d6efd;
+    transform: translate(-50%, -100%);
+    transition: all 0.3s ease-out;
+  }
+
+  .btn-hover:hover {
+    background-color: #021931;
+  }
+
+  .btn-hover:hover::before {
+    transform: translate(-50%, 0);
+    width: 110%;
+  }
+
+  .btn-hover:hover i {
+    transform: translateX(5px);
+    display: inline-block;
+  }
+
+  .btn-hover i {
+    display: inline-block;
+    margin-left: 10px;
+    transform: translateX(-50px);
+    transition: all 0.3s ease-out;
+  }
+
+  .btn-hover i {
+    display: none;
+  }
+
+  .image-left {
+    position: relative;
+    left: -500px;
+    max-width: 100%;
+  }
+
+  .image-right {
+    position: relative;
+    right: -500px;
+    max-width: 100%;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .bg-image-parallax {
+      background-attachment: scroll;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://www.murdacaindustries.com/wp-content/uploads/2021/05/logo.png" alt="Logo"
+          class="d-inline-block align-text-top me-2" width="100" height="auto">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Chi Siamo</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Servizi
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Teleriscaldamento</a></li>
+              <li><a class="dropdown-item" href="#">Impianti Elettrici e Idraulici</a></li>
+              <li><a class="dropdown-item" href="#">Climatizzazione</a></li>
+              <li><a class="dropdown-item" href="#">Ristrutturazioni e domotica</a></li>
+              <li><a class="dropdown-item" href="#">Impianti Antincendio</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contatti</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="bg-image-parallax bg-dark"
+    style="background-image: url('https://img.freepik.com/premium-photo/businessman-holding-smart-home-interface-with-icon-stats-data_110893-1089.jpg?w=1380'); background-position: right center;">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-md-8">
+          <h1 class="display-3 text-white fw-bold">Trasforma il tuo ambiente in un'oasi di comfort in poche settimane
+          </h1>
+          <p class="lead text-white">Offriamo soluzioni personalizzate per la casa e l'edilizia, dall'impiantistica alla
+            ristrutturazione, per trasformare la tua abitazione in un luogo accogliente e funzionale.</p>
+          <a href="#" class="btn btn-primary btn-hover mt-3">
+            Contattaci <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="p-5">
+    <div class="container-lg">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <h1 class="text-center">Se siete alla ricerca di servizi di ristrutturazione per la vostra
+            abitazione o la vostra industria nella provincia di Torino, il nostro team esperto è pronto ad aiutarvi</h1>
+          <p class="lead text-center">Offriamo soluzioni complete per i vostri impianti di riscaldamento,
+            teleriscaldamento, elettrici, idraulici e antincendio, garantendo un lavoro professionale e di alta qualità.
+
+            Con la nostra esperienza pluriennale nel settore, siamo in grado di offrire rifacimenti e impianti su misura
+            per
+            soddisfare le vostre esigenze specifiche. Siamo in grado di realizzare interventi su case, appartamenti e
+            industrie, sia grandi che piccole, garantendo la massima cura dei dettagli e il rispetto delle scadenze.</p>
+          </col-lg-9>
+        </div class="row align-items-center">
+      </div>
+  </section>
+
+  <section>
+    <div class="row d-flex align-items-center">
+      <div class="col-lg-6 py-5 image-left h-100">
+        <img
+          src="https://img.freepik.com/free-photo/3d-house-decoration_1048-4703.jpg?w=1060&t=st=1677952074~exp=1677952674~hmac=9b02011faea7769544af85fb0545740f5dbb23a650e18dd1a0b7858b18fddc6b"
+          alt="">
+      </div>
+      <div class="col-lg-6 p-5 h-100 bg-light bg-gradient" style="z-index: 10;">
+        <h2>Chi siamo</h2>
+        <p>Siamo un'azienda che ha a cuore i propri clienti e la loro soddisfazione. La nostra missione è fornire
+          soluzioni personalizzate e innovative per la ristrutturazione e l'installazione di impianti, garantendo il
+          massimo comfort e la massima sicurezza.</p>
+        <p>Come dei maestri artigiani, utilizziamo la nostra esperienza e la nostra creatività per creare soluzioni su
+          misura per ogni cliente. Siamo impegnati a utilizzare tecnologie all'avanguardia e materiali di alta qualità
+          per garantire risultati duraturi e di alta qualità.</p>
+        <p>Siamo qui per aiutare i nostri clienti a creare ambienti che rispecchiano il loro stile di vita e le loro
+          esigenze. Siamo come degli architetti che progettano ambienti su misura per i loro clienti, in grado di
+          soddisfare ogni esigenza e desiderio.</p>
+        <p>Ma non ci fermiamo qui: ci preoccupiamo anche dell'impatto ambientale del nostro lavoro e cerchiamo di
+          utilizzare materiali a basso impatto ambientale e di ridurre al minimo gli sprechi. Siamo convinti che un
+          approccio sostenibile sia fondamentale per garantire un futuro migliore per il nostro pianeta e le generazioni
+          future.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row d-flex align-items-center">
+      <div class="col-lg-6 p-5 h-100 bg-light bg-gradient" style="z-index: 10;">
+        <h2>I nostri Servizi</h2>
+        <em class="lead fw-bold py-5">Siete stufi di dovervi rivolgere a diverse aziende per soddisfare le vostre esigenze di ristrutturazione e
+          impiantistica?</em>
+        <p> Murdaca Industries ha la soluzione! Grazie alla nostra esperienza pluriennale nel settore,
+          possiamo offrire una ristrutturazione all'avanguardia che combina impianti elettrici, idraulici, di
+          climatizzazione e antincendio, nonché la domotica per gestire il tutto con un semplice tocco.</p>
+        <p>
+          Con noi, avete l'opportunità di concentrarvi sui vostri progetti di ristrutturazione senza dovervi preoccupare
+          di dover
+          coordinare diversi fornitori. Vi garantiamo un servizio completo, efficiente e affidabile.
+        </p>
+        <p>Contattateci oggi stesso e scoprite come possiamo aiutarvi a realizzare i vostri progetti!</p>
+      </div>
+      <div class="col-lg-6 py-5 image-right h-100">
+        <img class="w-100"
+          src="https://lh3.googleusercontent.com/zb5c1q7uWppqDZsQVTSfAkFtuzHabcFfwfrcaSMbdDNCkydfviJc0GTJGB7E_lWVOyjeUdr7bqiYJganbEQ1fZmcx9c1mb2Gt2gXo7faTbTuoZCj-GxiE92MRZRBSxqT9lhn3lNw7u_eE_3TBMzjQoQYKz2nP9MDns4EbipigqtnWb5p-V8eKRZ3DSTdjZMd5xgA57WirHYMOInRhE-OvRisBKZFFiv4k_BOqAD8npfVla9dgm5PPNy4Vr-HLrzZlXlubOLZDKFBff12vXbjIYBMOAsNILTQfy4qA0hQUMtkOq3z9WOIEboI93ygxT_B0IFerinZ4uMeqRrDhNodvmI6pvBRgOk8bsZhn7tA3TWQ1l-VYiXpveqtAc-pLQCCcze5Mak5t0DQjC1--q1zUFuQaN6GhWLCVgUHzLivtcj52G58u1hyAJFchT705slyNZDLQ4QXSmwFcqu37WpCFQK8xVJ2wOeUr3yK3KKhfyEwd31nFeU8SVAiR4YZJANBZ0fAr5EtBZqCKyB0-wdZhFq_oCIp1tgNiwnmopTfHaOmKbrFiuwXSq7HCi1iNdmzbTyTT8J4UZXTqq5xQ9zNOznEtoG9XmN8lheI-iXIRR7xKFEjMhEbmphVTOWeHoioHWAaaH6hX_ggggCGB0owR2o86h5NtQYricNt7L0pw6COa_gf2OVBf8IEZjVwJSIiKlpNm0hDoryuNplLqzFcP2608LHHO1NQCIgwffRwk7kNfeInsrBHdjx6hPdEWDU6IAM7ep7ql2yD8zmqwNZybIoKB7onSX7tDcyzwQ1PqLYXvGL3BO00I_hcrY8GRTofgXRNpMDEyPmkbusMGIrP2WhJu83su6FPLRwvp8hhwyySow5_sSuYFl2iQYuiSF1liB_UhynjmPjftClQPvlWtXSA_W64BpapI4wYsh9bkopfW9GJIjcHZoacE5aZY9QatEVtQ0EFTQUgq8V-HCaw21CHJy-rJ2GocCfMCrrVy1cxo3Lq4cckrGi52S-iSUWfiTtgXECju1AR0A9l6T-LZ-A7tJDCwUZN2fl1sKS_ioUcGm6dDO4-t1kvVlKXGXZCXplEkAN6aIq_qhZU2SywBd0V0JzlO3qwzl7Svj6lIiN8fFuVZo-joCzwII0TUOEHMrVG-iHhII7FHDq-iArM8ve1q5nVZ8yfTEc9HA=w1500-h844-no?authuser=1"
+          alt="">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+  <script>
+    function slideImageRight(element, finalPosition) {
+      let currentPosition = parseInt(getComputedStyle(element).getPropertyValue('left'));
+      let interval = setInterval(function () {
+        if (currentPosition >= finalPosition) {
+          clearInterval(interval);
+        } else {
+          currentPosition += 10;
+          element.style.left = currentPosition + 'px';
+        }
+      }, 10);
+    }
+  </script>
+  <script>
+    window.addEventListener('load', function () {
+      let image = document.querySelector('.image-left');
+      slideImageRight(image, 0);
+    });
+
+  </script>
+
+  <script>
+    function slideImageLeft(element, finalPosition) {
+      let currentPosition = parseInt(getComputedStyle(element).getPropertyValue('left'));
+      let interval = setInterval(function () {
+        if (currentPosition <= finalPosition) {
+          clearInterval(interval);
+        } else {
+          currentPosition -= 10;
+          element.style.left = currentPosition + 'px';
+        }
+      }, 10);
+    }
+  </script>
+
+  <script>
+    window.addEventListener('load', function () {
+      let image = document.querySelector('.image-right');
+      slideImageLeft(image, 0);
+    });
+  </script>
+
+
+</body>
+
+</html>
